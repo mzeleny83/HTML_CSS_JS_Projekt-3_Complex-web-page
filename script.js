@@ -39,3 +39,13 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+// Attach event listener for dark mode toggle button
+document
+  .getElementById("toggleDarkModeBtn")
+  .addEventListener("click", toggleDarkMode);
+
+// Attach event listener for scroll to top button
+document
+  .getElementById("scrollToTopBtn")
+  .addEventListener("click", scrollToTop);
