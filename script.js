@@ -1,9 +1,11 @@
-  function toggleDarkMode() {
-    var body = document.body;
-    body.classList.toggle("dark-mode");
-  }
+function toggleDarkMode() {
+  var body = document.body;
+  body.classList.toggle("dark-mode");
+}
 
-  document.getElementById("passwordForm").addEventListener("submit", function(event) {
+document
+  .getElementById("passwordForm")
+  .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
 
     // Get password inputs
@@ -20,11 +22,20 @@
     }
   });
 
-  // Show/Hide Scroll to Top Button
-  window.addEventListener("scroll", function() {
-    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    if (document.documentElement.scrollTop > 1px) {
-      scrollToTopBtn.classList.add("show");
-    } else {
-      scrollToTopBtn.classList}
+// Show/Hide Scroll to Top Button
+window.addEventListener("scroll", function () {
+  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  if (document.documentElement.scrollTop > 100) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+});
 
+// Scroll to Top Function
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}

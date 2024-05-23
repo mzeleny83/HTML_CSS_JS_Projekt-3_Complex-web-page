@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <!-- Přidání odkazu na Font Awesome -->
     <style>
       /* Light Mode Styles */
       body {
@@ -72,14 +71,14 @@
 
       /* Scroll to Top Button */
       #scrollToTopBtn {
-        display: none;
+        display: block;
         position: fixed;
         bottom: 20px;
         right: 20px;
         background-color: #007bff;
         color: #fff;
         padding: 10px 20px;
-        border: none;
+        border: #333;
         border-radius: 5px;
         cursor: pointer;
         z-index: 99;
@@ -154,48 +153,7 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-      function toggleDarkMode() {
-        var body = document.body;
-        body.classList.toggle("dark-mode");
-      }
-
-      document
-        .getElementById("passwordForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form submission
-
-          // Get password inputs
-          var password1 = document.getElementById("password1").value;
-          var password2 = document.getElementById("password2").value;
-
-          // Check if passwords match
-          if (password1 !== password2) {
-            document.getElementById("passwordMismatch").style.display = "block";
-          } else {
-            document.getElementById("passwordMismatch").style.display = "none";
-            // Submit form if passwords match
-            this.submit();
-          }
-        });
-
-      // Show/Hide Scroll to Top Button
-      window.addEventListener("scroll", function () {
-        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        if (document.documentElement.scrollTop > 100) {
-          scrollToTopBtn.classList.add("show");
-        } else {
-          scrollToTopBtn.classList.remove("show");
-        }
-      });
-
-      // Scroll to Top Function
-      function scrollToTop() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-    </script>
+    <!-- Link to external JavaScript file -->
+    <script src="scripts.js"></script>
   </body>
 </html>
