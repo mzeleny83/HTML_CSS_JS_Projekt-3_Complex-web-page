@@ -25,7 +25,7 @@ document
 // Show/Hide Scroll to Top Button
 window.addEventListener("scroll", function () {
   var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-  if (document.documentElement.scrollTop > 100) {
+  if (document.documentElement.scrollTop > 1) {
     scrollToTopBtn.classList.add("show");
   } else {
     scrollToTopBtn.classList.remove("show");
