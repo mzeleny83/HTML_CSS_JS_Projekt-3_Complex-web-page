@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Přidání odkazu na Font Awesome -->
+    <style>
+      /* Light Mode Styles */
+      body {
+        background-color: #f0f0f0;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .section h2 {
+        margin-top: 0;
+      }
+
+      .image-container {
+        display: flex;
+        flex-wrap: wrap; /* Povolit zalomení řádku */
+        justify-content: space-between;
+      }
+
+      .image-container img {
+        width: calc(33.33% - 10px);
+        height: auto;
+        margin-bottom: 20px; /* Přidat mezery mezi obrázky */
+        transition: transform 0.3s;
+      }
+
+      .image-container img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background-color: #333;
+        color: #f0f0f0;
+      }
+
+      /* Toggle Button for Dark Mode */
+      .toggle-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Scroll to Top Button */
+      #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 99;
+      }
+
+      .show {
+        display: block !important;
+      }
+
+      /* Scroll to Top Icon */
+      #scrollToTopBtn i {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">
+      Toggle Dark Mode
+    </button>
+
+    <main class="container">
+      <section class="section">
+        <h2>Section 1</h2>
+        <div class="image-container">
+          <img src="image1.jpg" alt="Image 1" />
+          <img src="image2.jpg" alt="Image 2" />
+          <img src="image3.jpg" alt="Image 3" />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Section 2 - Form</h2>
+        <form id="passwordForm">
+          <label for="password1">Password:</label>
+          <input
+            type="password"
+            id="password1"
+            name="password1"
+            required
+          /><br />
+          <label for="password2">Confirm Password:</label>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            required
+          /><br />
+          <button type="submit">Submit</button>
+        </form>
+        <div id="passwordMismatch" style="display: none; color: red">
+          Passwords do not match!
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <p>Footer</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+      }
+
+      document
+        .getElementById("passwordForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Get password inputs
+          var password1 = document.getElementById("password1").value;
+          var password2 = document.getElementById("password2").value;
+
+          // Check if passwords match
+          if (password1 !== password2) {
+            document.getElementById("passwordMismatch").style.display = "block";
+          } else {
+            document.getElementById("passwordMismatch").style.display = "none";
+            // Submit form if passwords match
+            this.submit();
+          }
+        });
+
+      // Show/Hide Scroll to Top Button
+      window.addEventListener("scroll", function () {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.documentElement.scrollTop > 100) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      });
+
+      // Scroll to Top Function
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

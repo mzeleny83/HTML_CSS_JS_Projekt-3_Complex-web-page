@@ -1,0 +1,54 @@
+/* Light Mode Styles */
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Povolit zalomení řádku */
+  justify-content: space-between;
+}
+
+.image-container img {
+  width: calc(33.33% - 10px); /* Šířka obrázku */
+  height: auto;
+  margin-bottom: 20px; /* Přidat mezery mezi obrázky */
+  transition: transform 0.3s;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
