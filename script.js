@@ -1,4 +1,3 @@
-<script>
   function toggleDarkMode() {
     var body = document.body;
     body.classList.toggle("dark-mode");
@@ -29,4 +28,3 @@
     } else {
       scrollToTopBtn.classList}
 
-      </script>
